@@ -1,0 +1,4 @@
+# Host row. The browser entry is declared in package.json under dsh.client.
+- insert:
+    - id: dsh-welcome-back
+      name: dsh-welcome-back
