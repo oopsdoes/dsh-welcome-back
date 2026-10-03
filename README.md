@@ -33,14 +33,24 @@ DeepSeek Harness 的“欢迎回归 + 今日工作集”插件。
 
 设置通过右下角的 `◷` 按钮打开。可配置总开关、闲置阈值、重复提醒间隔、提醒范围、是否显示时长和欢迎语。
 
-## 安全边界
+## 安装与兼容性
 
-这是隔离源码原型，尚未安装进 DSH Desktop profile。它没有修改 `D:\soft\dsh-next-home\profiles\desktop`，也没有接触 DSH 会话文件。
+当前版本为 `0.2.0`，已在 DSH 内核 `0.2.0-rc.2` 上完成本机验证。声明的兼容范围为：
 
-安装前必须：
+```text
+>=0.2.0-rc.2 <0.2.1
+```
 
-1. 读取 DSH Desktop 当前内核版本；
-2. 核对 `package.json` 中 `dsh.engines.dsh`；
-3. 备份 desktop profile 的 `package.json` 和 lockfile；
-4. 确认 DSH 中没有未完成的重要会话；
-5. 通过 DSH Desktop 的插件管理通道安装，而不是直接复制到 profile。
+可通过 DSH 的插件管理界面或插件命令安装本仓库。也可以下载 GitHub Release 中的 `.tgz` 预构建安装包。
+
+安装或升级前应：
+
+1. 确认 DSH 当前内核落在上述兼容范围内；
+2. 备份 desktop profile 的 `package.json` 和 lockfile；
+3. 完全退出 DSH Desktop；
+4. 通过 DSH 的插件管理通道安装，而不是直接复制文件到 profile；
+5. 重启 DSH 后，用一个短闲置阈值测试回归卡和提醒范围。
+
+## 隐私与数据边界
+
+插件在浏览器本地存储中仅保留当前会话的简短断点快照、活动时间、提示关闭时间和工作集标记。它不读取长期记忆、其他会话、外部文件、Git、项目状态或系统活动，也不会改写 DSH 会话日志。
