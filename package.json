@@ -1,6 +1,6 @@
 {
   "name": "dsh-welcome-back",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "private": true,
   "description": "DeepSeek Harness 的欢迎回归与今日工作集提醒。",
   "type": "module",
